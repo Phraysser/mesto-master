@@ -1,6 +1,6 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
-import {initialCards} from './cards.js'; //импортируем массив карточек
+import {initialCards} from './cards.js'; //импорт массива карточек
 
 const buttonEdit = document.querySelector('.profile__button_edit');
 const buttonClose = document.querySelector('.popup__close-button');
@@ -31,7 +31,7 @@ const obj = {
 const validateProfile = new FormValidator(obj, document.forms.form_edit);
 validateProfile.enableValidation(obj, document.forms.form_edit);
 
-//добавить карточки
+//добавление карточки
 function addCard(name, link) {
   const card = new Card(name, link, 'element-template');
   const cardElement = card.generateCard();
@@ -54,7 +54,7 @@ function popupClose() {
 }
 buttonClose.addEventListener('click', popupClose);
 
-//добавить данные из инпутов в форму
+//добавление данных
 function formSubmitHandler(evt) {
     evt.preventDefault();
     profileTitle.textContent = nameInput.value;
@@ -69,15 +69,15 @@ function popupAddClose() {
 };
 buttonAddClose.addEventListener('click', popupAddClose);
 
-// добавить новую карточку по кнопке «сохранить»
+// добавление новой карточки по кнопке «сохранить»
 formAdd.addEventListener('submit', function(evt){
   evt.preventDefault();
   const name = document.querySelector('.popup__input_add_title');
   const link = document.querySelector('.popup__input_add_link');
   addCard(name.value, link.value);
   popupAddClose();
-  name.value = ""; //сбросить поля ввода
-  link.value = ""; //сбросить поля ввода
+  name.value = ""; //сброс поля ввода
+  link.value = ""; //сброс поля ввода
 });
 
 //попап добавление фотографии
