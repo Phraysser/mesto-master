@@ -15,4 +15,4 @@
 
 ## Ссылка на проект
 
-https://sergeimusailov.github.io/mesto/
+https://phraysser.github.io/mesto-master/
